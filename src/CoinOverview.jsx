@@ -1,4 +1,4 @@
-// CoinOverview.jsx
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -50,7 +50,7 @@ function CoinOverview() {
                 </nav>
             </header>
 
-            {/* ✅ Zoekbalk met juiste props */}
+
             <SearchBar keyword={keyword} onChange={setKeyword} />
 
             <div>
