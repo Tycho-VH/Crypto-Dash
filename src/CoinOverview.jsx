@@ -1,3 +1,4 @@
+// CoinOverview.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./index.css";
@@ -9,7 +10,6 @@ function CoinOverview() {
     const [keyword, setKeyword] = useState("");
     const [favorite, setFavorite] = useState([]);
 
-    // Voeg favorieten toe uit localStorage
     useEffect(() => {
         const savedFavorites = localStorage.getItem("favorites");
         if (savedFavorites) {
@@ -17,7 +17,6 @@ function CoinOverview() {
         }
     }, []);
 
-    // Bewaar favorieten in localStorage
     useEffect(() => {
         localStorage.setItem("favorites", JSON.stringify(favorite));
     }, [favorite]);
@@ -51,7 +50,8 @@ function CoinOverview() {
                 </nav>
             </header>
 
-            <SearchBar keyword={keyword} onChange={(e) => setKeyword(e.target.value)} />
+            {/* ✅ Zoekbalk met juiste props */}
+            <SearchBar keyword={keyword} onChange={setKeyword} />
 
             <div>
                 <h2>⭐ Favoriete Coins</h2>

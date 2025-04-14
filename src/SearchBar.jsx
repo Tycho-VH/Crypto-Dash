@@ -1,11 +1,12 @@
+
 const SearchBar = ({ keyword, onChange }) => {
     return (
         <input
+            type="text"
             className="border border-gray-300 px-5 py-2 w-full rounded-full bg-gray-100"
-            key="search-bar"
+            placeholder="Zoek coins..." // Aangepaste placeholder in het Nederlands
             value={keyword}
-            placeholder={"Search coins..."} // Aangepaste placeholder
-            onChange={(e) => onChange(e.target.value)} // Bijwerken van de zoekterm
+            onChange={(e) => onChange(e.target.value)} // Geeft alleen de string door
         />
     );
 };
